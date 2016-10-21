@@ -1,20 +1,20 @@
 package MovieBusinessLayer;
 
 import java.util.List;
-
+import MovieDataLayer.*;
 import MovieClassLayer.*;
 public class MovieBusinessLayer {
 
-
-	public Films GetFilmsFromCSV(String csvPath) 
+	
+	 static Films CompleteList = new Films();
+	public static Films GetFilmsFromCSV(String csvPath) 
 	{
+			 MovieClassLayer.Films films = MovieDataLayer.GetCsvData(csvPath);
+			 CompleteList = films;
+			 
+             return films;
 		
-		// Gets all the properties of films from the films class of movie class layer. 
-		
-		return null;
 	}
-
-
 
 
 	public List<Director> GetDistinctDirectorsFromFilms(Films films, String directorID)
